@@ -16,8 +16,8 @@ module.exports = function(grunt) {
 
     watch: {
       css: {
-        files: 'scss/**/*.scss',
-        tasks: ['sass']
+        files: ['scss/**/*.scss', 'jade/**/*.jade'],
+        tasks: ['build']
       }
     },
 
@@ -52,7 +52,18 @@ module.exports = function(grunt) {
           'dist/index.html': ['jade/**/*.jade']
         }
       }
-    }
+    },
+
+    copy: {
+      main: {
+        files: [
+          {
+            src: ['img/**', 'fonts/**'],
+            dest: 'dist/'
+          }
+        ],
+      }
+    },
 
   });
 
@@ -60,8 +71,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['jade', 'sass', 'cssmin']);
+  grunt.registerTask('build', ['jade', 'sass', 'cssmin', 'copy']);
 
 };
