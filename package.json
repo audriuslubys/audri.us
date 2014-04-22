@@ -1,0 +1,14 @@
+{
+  "name": "audri.us",
+  "description": "audri.us website",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Audrius Lubys",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-jade": "~0.11.0"
+  }
+}
