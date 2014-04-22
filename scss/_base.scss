@@ -4,21 +4,19 @@ body {
 
 header {
   background: transparent;
-  box-sizing: border-box;
-  padding-right: 120px;
   text-align: right;
 }
 
 h1 {
   color: $color-main-fg;
   font-family: 'Yanone Kaffeesatz', 'Arial Narrow', Arial, sans-serif;
-  font-size: 160px;
+  font-size: $heading-size;
   font-weight: bold;
-  line-height: 100px;
+  line-height: $heading-line-height;
   margin: 0;
   padding: 0;
 }
 
-.main-wrapper {
+.main-content {
   background: $color-main-fg;
 }

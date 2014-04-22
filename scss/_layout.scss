@@ -1,11 +1,21 @@
-.main-wrapper {
-  height: 360px;
-  margin-top: -180px;
+$padding-size: 120px;
+$link-size: 120px;
+
+$height: $link-size + ($padding-size * 2);
+
+.vertical-wrapper {
+  margin-top: -(($height + $heading-line-height) / 2);
   position: relative;
   top: 50%;
 }
 
+.main-content {
+  box-sizing: border-box;
+  height: $height;
+  padding: $padding-size;
+}
+
 header {
+  padding-right: $padding-size;
   position: relative;
-  top: -100px;
 }
