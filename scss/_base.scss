@@ -4,19 +4,43 @@ body {
 
 header {
   background: transparent;
-  text-align: right;
 }
 
 h1 {
   color: $color-main-fg;
   font-family: 'Yanone Kaffeesatz', 'Arial Narrow', Arial, sans-serif;
-  font-size: $heading-size;
+  font-size: $heading-size-smaller;
   font-weight: bold;
-  line-height: $heading-line-height;
   margin: 0;
   padding: 0;
 }
 
 .main-content {
   background: $color-main-fg;
+}
+
+@include media(normal) {
+
+  header {
+    text-align: right;
+  }
+
+  h1 {
+    font-size: $heading-size;
+    line-height: $heading-line-height;
+  }
+
+}
+
+@include media(short) {
+
+  header {
+    text-align: right;
+  }
+  
+  h1 {
+    font-size: $heading-size;
+    line-height: $heading-line-height;
+  }
+
 }

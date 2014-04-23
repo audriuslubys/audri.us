@@ -3,19 +3,49 @@ $link-size: 120px;
 
 $height: $link-size + ($padding-size * 2);
 
-.vertical-wrapper {
-  margin-top: -(($height + $heading-line-height) / 2);
-  position: relative;
-  top: 50%;
-}
-
-.main-content {
-  box-sizing: border-box;
-  height: $height;
-  padding: $padding-size;
-}
-
 header {
-  padding-right: $padding-size;
-  position: relative;
+  padding: 3%;
+}
+
+@include media(smaller) {
+  .main-content {
+    min-height: 120px;
+    padding: 5% 5px;
+  }
+}
+
+@include media(normal) {
+
+  .vertical-wrapper {
+    margin-top: -(($height + $heading-line-height) / 2);
+    position: relative;
+    top: 50%;
+  }
+
+  .main-content {
+    box-sizing: border-box;
+    height: $height;
+    padding: $padding-size;
+  }
+
+  header {
+    padding: 0 $padding-size 0 0;
+    position: relative;
+  }
+
+}
+
+@include media(short) {
+
+  header {
+    padding: 20px $padding-size 0 0;
+    position: relative;
+  }
+
+  .main-content {
+    box-sizing: border-box;
+    height: $height;
+    padding: $padding-size;
+  }
+
 }

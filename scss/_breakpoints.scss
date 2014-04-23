@@ -1,0 +1,22 @@
+@mixin media($type) {
+  @if $type == smaller {
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 1024px) {
+      @content;
+    }
+  }
+  @else if $type == normal {
+    @media only screen
+    and (min-device-width: 1025px)
+    and (min-height: 500px) {
+      @content;
+    }
+  }
+  @else if $type == short {
+    @media only screen
+    and (max-height: 500px) {
+      @content;
+    }
+  }
+}
