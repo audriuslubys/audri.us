@@ -11,6 +11,11 @@ li {
     font: inherit;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 header,
 section,
 article {

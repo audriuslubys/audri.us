@@ -9,8 +9,11 @@
 }
 
 @include font-face('Yanone Kaffeesatz', '../fonts/YanoneKaffeesatz/YanoneKaffeesatz-Bold', normal, bold);
+@include font-face('Yanone Kaffeesatz', '../fonts/YanoneKaffeesatz/YanoneKaffeesatz-Regular');
+$font-family: 'Yanone Kaffeesatz', 'Arial Narrow', 'Arial', sans-serif;
 
 $heading-size: 160px;
 $heading-line-height: 100px;
 
 $heading-size-smaller: 72px;
+$link-size-smaller: 24px;

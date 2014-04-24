@@ -8,15 +8,11 @@ header {
 
 h1 {
   color: $color-main-fg;
-  font-family: 'Yanone Kaffeesatz', 'Arial Narrow', Arial, sans-serif;
+  font-family: $font-family;
   font-size: $heading-size-smaller;
   font-weight: bold;
   margin: 0;
   padding: 0;
-}
-
-.main-content {
-  background: $color-main-fg;
 }
 
 @include media(normal) {
@@ -37,10 +33,31 @@ h1 {
   header {
     text-align: right;
   }
-  
+
   h1 {
     font-size: $heading-size;
     line-height: $heading-line-height;
   }
 
+}
+
+.main-content {
+  background: $color-main-fg;
+}
+
+.links {
+  li {
+    background: rgba($color-main-bg, .2);
+
+    a {
+      color: lighten($color-main-bg, 10%);
+      text-decoration: none;
+
+      span {
+        font-family: $font-family;
+        font-size: $link-size-smaller;
+      }
+    }
+
+  }
 }

@@ -49,3 +49,67 @@ header {
   }
 
 }
+
+@include media(smaller) {
+  .links {
+    li {
+      @include clearfix;
+
+      border-radius: 60px 0 0 60px / 60px 0 0 60px;
+      box-sizing: border-box;
+      height: 120px;
+      margin: 0 0 20px 0;
+      padding: 20px;
+      width: 100%;
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        img {
+          float: left;
+        }
+
+        span {
+          display: block;
+          float: left;
+          line-height: 80px;
+          margin: 0 0 0 20px;
+        }
+      }
+
+    }
+  }
+}
+
+@include media(normal) {
+
+  .links {
+    @include clearfix;
+
+    li {
+      box-sizing: border-box;
+      border-radius: 60px;
+      height: 120px;
+      float: left;
+      padding: 20px;
+      width: 120px;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    li + li {
+      margin: 0 0 0 120px;
+    }
+  }
+
+}
