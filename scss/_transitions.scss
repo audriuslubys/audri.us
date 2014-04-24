@@ -1,0 +1,16 @@
+@include media(normal) {
+  .links li {
+    -o-transition: box-shadow .5s, background .4s;
+    -moz-transition: box-shadow .5s, background .4s;
+    -webkit-transition: box-shadow .5s, background .4s;
+    transition: box-shadow .5s, background .4s;
+    box-shadow: 0 0 0 0 $color-main-fg,
+                0 0 0 0 #37bb89;
+
+    &:hover {
+      box-shadow: 0 0 0 10px $color-main-fg,
+                  0 0 0 20px #37bb89;
+      background: $color-main-fg;
+    }
+  }
+}
