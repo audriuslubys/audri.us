@@ -5,11 +5,11 @@
     -webkit-transition: box-shadow .5s, background .4s;
     transition: box-shadow .5s, background .4s;
     box-shadow: 0 0 0 0 $color-main-fg,
-                0 0 0 0 #37bb89;
+                0 0 0 0 rgba($color-main-bg, 0.2);
 
     &:hover {
       box-shadow: 0 0 0 10px $color-main-fg,
-                  0 0 0 20px #37bb89;
+                  0 0 0 20px rgba($color-main-bg, 0.2);
       background: $color-main-fg;
     }
   }
