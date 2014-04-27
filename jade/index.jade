@@ -7,17 +7,19 @@ html(lang='en')
 
     link(rel='stylesheet', href='css/global.min.css')
 
-    title audri.us
+    title= data.title
 
   body
     div.vertical-wrapper
       header
-        h1 AUDRI.US
+        h1= data.title
 
       div.main-content
 
         ul.links
-          li
-            a(href='http://github.com/audriuslubys')
-              img(src='img/octocat.png', alt='Github Octocat')
-              span GitHub Profile
+          - for(var i = 0, totalLinks = data.links.length; i < totalLinks; i++) {
+            li
+              a(href=data.links[i].href)
+                img(src=data.links[i].image.src, alt=data.links[i].image.alt)
+                span= data.links[i].title
+          - }

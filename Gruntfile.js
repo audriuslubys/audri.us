@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
     watch: {
       css: {
-        files: ['scss/**/*.scss', 'jade/**/*.jade'],
+        files: ['scss/**/*.scss', 'jade/**/*.jade', './data.json'],
         tasks: ['build']
       }
     },
@@ -33,7 +33,8 @@ module.exports = function(grunt) {
       debug: {
         options: {
           data: {
-            debug: true
+            debug: true,
+            data: grunt.file.readJSON('data.json')
           }
         },
         files: {
@@ -44,7 +45,8 @@ module.exports = function(grunt) {
       release: {
         options: {
           data: {
-            debug: false
+            debug: false,
+            data: grunt.file.readJSON('data.json')
           },
           pretty: true
         },

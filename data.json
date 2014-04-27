@@ -1,0 +1,13 @@
+{
+  "title": "AUDRI.US",
+  "links": [
+    {
+      "href": "http://github.com/audriuslubys",
+      "title": "GitHub Profile",
+      "image": {
+        "src": "img/octocat.png",
+        "alt": "GitHub Octocat"
+      }
+    }
+  ]
+}
