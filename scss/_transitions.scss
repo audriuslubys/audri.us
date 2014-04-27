@@ -1,9 +1,13 @@
+@mixin prefix-transition($values...) {
+  -o-transition: $values;
+  -moz-transition: $values;
+  -webkit-transition: $values;
+  transition: $values;
+}
+
 @include media(normal) {
   .links li {
-    -o-transition: box-shadow .5s, background .4s;
-    -moz-transition: box-shadow .5s, background .4s;
-    -webkit-transition: box-shadow .5s, background .4s;
-    transition: box-shadow .5s, background .4s;
+    @include prefix-transition(box-shadow .5s cubic-bezier(0.635, 0.005, 0.350, 1.360), background .4s);
     box-shadow: 0 0 0 0 $color-main-fg,
                 0 0 0 0 rgba($color-main-bg, 0.2);
 
