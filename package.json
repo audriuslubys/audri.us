@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "private": true,
   "author": "Audrius Lubys",
+  "scripts": {
+    "buildjade": "jade jade --out ./dist --obj ./data.json --pretty",
+    "buildcss": "node-sass --output-style compact ./scss/main.scss dist/css/style.min.css",
+    "copyfiles": "cp -r fonts dist && cp -r img dist",
+    "build": "npm run buildjade && npm run buildcss && npm run copyfiles"
+  },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-contrib-sass": "~0.7.3",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-contrib-jade": "~0.11.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "jade-cli": "^0.1.1",
+    "node-sass": "^3.3.3"
   }
 }

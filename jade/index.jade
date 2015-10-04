@@ -5,21 +5,21 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
-    link(rel='stylesheet', href='css/global.min.css')
+    link(rel='stylesheet', href='css/style.min.css')
 
-    title= data.title
+    title= title
 
   body
     div.vertical-wrapper
       header
-        h1= data.title
+        h1= title
 
       div.main-content
 
         ul.links
-          - for(var i = 0, totalLinks = data.links.length; i < totalLinks; i++) {
+          - for(var i = 0, totalLinks = links.length; i < totalLinks; i++) {
             li
-              a(href=data.links[i].href)
-                img(src=data.links[i].image.src, alt=data.links[i].image.alt)
-                span= data.links[i].title
+              a(href=links[i].href)
+                img(src=links[i].image.src, alt=links[i].image.alt)
+                span= links[i].title
           - }
