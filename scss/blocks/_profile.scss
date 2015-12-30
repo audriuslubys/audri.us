@@ -1,0 +1,20 @@
+$spacing-vertical: 0.3rem;
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  &__person {
+    color: $foreground-color;
+    font-size: 1.3rem;
+    margin: 0 $spacing-vertical;
+  }
+}
+
+.yours-truly {
+  @extend .profile__person;
+}

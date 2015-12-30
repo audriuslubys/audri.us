@@ -1,12 +1,28 @@
 {
-  "title": "AUDRI.US",
+  "title": "Audrius Lubys - Frontend developer",
   "profileLinks": [
+    {
+      "href": "mailto:audrius.lubys@gmail.com",
+      "title": "Email",
+      "image": {
+        "src": "img/at.svg",
+        "altText": "Email"
+      }
+    },
     {
       "href": "http://github.com/audriuslubys",
       "title": "GitHub Profile",
       "image": {
-        "src": "img/octocat.png",
+        "src": "img/octocat.svg",
         "altText": "GitHub Octocat"
+      }
+    },
+    {
+      "href": "https://lt.linkedin.com/in/audriuslubys",
+      "title": "LinkedIn profile",
+      "image": {
+        "src": "img/in.svg",
+        "altText": "LinkedIn"
       }
     }
   ]

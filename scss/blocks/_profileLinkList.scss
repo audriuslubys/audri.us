@@ -1,0 +1,14 @@
+$profile-link-icon-size: 1.4rem;
+
+.profile-links {
+  &__link {
+    float: left;
+    margin: 0 $spacing-vertical;
+    height: $profile-link-icon-size;
+    width: $profile-link-icon-size;
+  }
+
+  &__link img {
+    height: 100%;
+  }
+}

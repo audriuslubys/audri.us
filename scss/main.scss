@@ -1,11 +1,10 @@
-@import 'utilities';
+@import 'mixins/breakpoints';
+@import 'mixins/fontFace';
+
 @import 'reset';
-@import 'breakpoints';
-
 @import 'colors';
+@import 'font';
 
-@import 'type';
-@import 'base';
-@import 'layout';
-
-@import 'transitions';
+@import 'blocks/homepage';
+@import 'blocks/profile';
+@import 'blocks/profileLinkList';
