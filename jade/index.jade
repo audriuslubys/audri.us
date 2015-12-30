@@ -17,9 +17,8 @@ html(lang='en')
       div.main-content
 
         ul.links
-          - for(var i = 0, totalLinks = links.length; i < totalLinks; i++) {
+          each link in profileLinks
             li
-              a(href=links[i].href)
-                img(src=links[i].image.src, alt=links[i].image.alt)
-                span= links[i].title
-          - }
+              a(href=link.href)
+                img(src=link.image.src, alt=link.image.altText)
+                span= link.title
