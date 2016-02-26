@@ -7,7 +7,7 @@
   "scripts": {
     "buildjade": "jade --pretty --obj data.json --out dist --no-debug jade/index.jade",
     "prebuildcss": "mkdir -p dist/css",
-    "buildcss": "node-sass --output-style compact scss/main.scss dist/css/style.min.css",
+    "buildcss": "node-sass --output-style compressed scss/main.scss dist/css/style.min.css",
     "copyfiles": "cp -r fonts dist && cp -r img dist",
     "build": "npm run buildjade && npm run buildcss && npm run copyfiles"
   },
