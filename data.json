@@ -16,7 +16,8 @@
       "image": {
         "src": "img/octocat.svg",
         "altText": "GitHub Octocat"
-      }
+      },
+      "class": "profile-links__link--round"
     },
     {
       "href": "https://lt.linkedin.com/in/audriuslubys",

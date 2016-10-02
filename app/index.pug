@@ -14,8 +14,8 @@ html(lang='en')
       span.yours-truly= person
       ul.profile-links
         each link in profileLinks
-          li.profile-links__link
-            a(href=link.href)
+          li.profile-links__item
+            a(href=link.href, class=['profile-links__link', link.class])
               img(src=link.image.src, alt=link.image.altText)
 
   script(type='text/javascript').

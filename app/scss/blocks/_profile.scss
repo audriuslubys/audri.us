@@ -1,4 +1,4 @@
-$spacing-vertical: 0.3rem;
+$spacing-vertical: 5px;
 
 .profile {
   display: flex;
@@ -11,15 +11,15 @@ $spacing-vertical: 0.3rem;
   @include breakpoint(phone) {
     flex-direction: column;
   }
+}
 
-  &__person {
-    color: $foreground-color;
-    font-size: 1.3rem;
-    margin: 0 $spacing-vertical;
+.profile__person {
+  color: $foreground-color;
+  font-size: 1.3rem;
+  margin: 0 $spacing-vertical;
 
-    @include breakpoint(phone) {
-      font-size: 2rem;
-    }
+  @include breakpoint(phone) {
+    font-size: 2rem;
   }
 }
 
