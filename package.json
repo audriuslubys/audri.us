@@ -8,10 +8,14 @@
     "buildmarkup": "pug -D -P -O data.json -o dist app/index.pug",
     "buildcss": "node-sass --output-style compressed app/scss/main.scss dist/css/style.min.css",
     "copyfiles": "cp -r app/fonts dist && cp -r app/img dist",
-    "build": "npm run buildmarkup && npm run buildcss && npm run copyfiles"
+    "build": "npm run buildmarkup && npm run buildcss && npm run copyfiles",
+    "start": "npm run build && http-server dist -o",
+    "watch": "watch 'npm run build' app"
   },
   "devDependencies": {
+    "http-server": "^0.9.0",
     "node-sass": "^3.4.2",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "watch": "^0.19.2"
   }
 }
