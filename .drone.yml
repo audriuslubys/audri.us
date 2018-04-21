@@ -23,6 +23,15 @@ pipeline:
       - yarn build
     secrets: [ ga_id ]
 
+  scp:
+    image: appleboy/drone-scp
+    host: audri.us
+    port: 22
+    target: /var/www/audri.us
+    source: dist
+    strip_components: 1
+    secrets: [ ssh_username, ssh_key ]
+
   rebuild-cache:
     image: drillster/drone-volume-cache
     rebuild: true
