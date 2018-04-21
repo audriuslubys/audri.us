@@ -1,18 +1,19 @@
 {
   "name": "audri.us",
   "description": "audri.us website",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "author": "Audrius Lubys",
   "scripts": {
-    "buildmarkup": "pug -D -P -O data.json -o dist app/index.pug",
-    "buildcss": "node-sass --output-style compressed app/scss/main.scss dist/css/style.min.css",
+    "buildmarkup": "pug -D -P -O data.js -o dist app/index.pug",
+    "buildcss": "node-sass --output-style compressed app/scss/main.scss dist/style.min.css",
     "copyfiles": "cp -r app/fonts dist && cp -r app/img dist",
-    "build": "npm run buildmarkup && npm run buildcss && npm run copyfiles",
-    "start": "npm run build && http-server dist -o",
-    "watch": "watch 'npm run build' app"
+    "build": "yarn buildmarkup && yarn buildcss && yarn copyfiles",
+    "start": "yarn build && http-server dist -o",
+    "watch": "watch 'yarn build' app"
   },
   "devDependencies": {
+    "dotenv": "^5.0.1",
     "http-server": "^0.11.1",
     "node-sass": "^4.8.3",
     "pug-cli": "^1.0.0-alpha6",

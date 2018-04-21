@@ -1,4 +1,3 @@
-.debug/
-.sass-cache/
 dist/
 node_modules/
+.env

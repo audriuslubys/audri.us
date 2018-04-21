@@ -1,6 +1,15 @@
+@mixin font-face($font-name, $file, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: '#{$font-name}';
+        font-style: $style;
+        font-weight: $weight;
+        src: local(#{$font-name}),
+             url(#{$file}.ttf) format('truetype');
+    }
+}
+
 @include font-face('Antonio', '../fonts/Antonio/Antonio-Regular');
-$font-family: 'Antonio', 'Arial', sans-serif;
 
 body {
-  font-family: $font-family;
+  font-family: 'Antonio', 'Arial', sans-serif;
 }
