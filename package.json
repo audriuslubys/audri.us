@@ -13,9 +13,9 @@
     "watch": "watch 'npm run build' app"
   },
   "devDependencies": {
-    "http-server": "^0.9.0",
-    "node-sass": "^3.4.2",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.8.3",
     "pug-cli": "^1.0.0-alpha6",
-    "watch": "^0.19.2"
+    "watch": "^1.0.2"
   }
 }
