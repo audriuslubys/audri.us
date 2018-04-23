@@ -1,11 +1,11 @@
 {
   "name": "audri.us",
   "description": "audri.us website",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "author": "Audrius Lubys",
   "scripts": {
-    "buildmarkup": "pug -D -P -O data.js -o dist app/index.pug",
+    "buildmarkup": "pug -D -P -O env.js -o dist app/index.pug",
     "buildcss": "node-sass --output-style compressed app/scss/main.scss dist/style.min.css",
     "copyfiles": "cp -r app/fonts dist && cp -r app/img dist",
     "build": "yarn buildmarkup && yarn buildcss && yarn copyfiles",
