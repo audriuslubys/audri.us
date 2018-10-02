@@ -9,10 +9,12 @@
     "buildstaticfiles": "ncp src/static dist",
     "build": "yarn buildmarkup && yarn buildstaticfiles",
     "start": "yarn build && http-server dist -o",
-    "watch": "watch 'yarn build' app"
+    "watch": "watch 'yarn build' app",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "devDependencies": {
     "dotenv": "^5.0.1",
+    "gh-pages": "1.2.0",
     "http-server": "^0.11.1",
     "jstransformer-sass": "^1.0.0",
     "ncp": "^2.0.0",
