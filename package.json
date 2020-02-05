@@ -9,16 +9,17 @@
     "buildstaticfiles": "ncp src/static dist",
     "build": "yarn buildmarkup && yarn buildstaticfiles",
     "start": "yarn build && http-server dist -o",
-    "watch": "watch 'yarn build' app",
-    "deploy": "yarn build && gh-pages -d dist"
+    "watch": "watch 'yarn build' app"
+  },
+  "resolutions": {
+    "node-sass": "4.13.1"
   },
   "devDependencies": {
-    "dotenv": "^5.0.1",
-    "gh-pages": "1.2.0",
-    "http-server": "^0.11.1",
+    "dotenv": "^8.2.0",
+    "http-server": "^0.12.1",
     "jstransformer-sass": "^1.0.0",
     "ncp": "^2.0.0",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.13.1",
     "pug-cli": "^1.0.0-alpha6",
     "watch": "^1.0.2"
   }
