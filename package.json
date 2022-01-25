@@ -5,22 +5,13 @@
   "private": true,
   "author": "Audrius Lubys",
   "scripts": {
-    "buildmarkup": "pug --obj env.js --out dist src/index.pug",
-    "buildstaticfiles": "ncp src/static dist",
-    "build": "yarn buildmarkup && yarn buildstaticfiles",
-    "start": "yarn build && http-server dist -o",
-    "watch": "watch 'yarn build' app"
-  },
-  "resolutions": {
-    "node-sass": "4.13.1"
+    "build": "node ./build src/index.pug src/static dist",
+    "start": "npm run build && http-server dist -o"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
-    "http-server": "^0.12.1",
-    "jstransformer-sass": "^1.0.0",
-    "ncp": "^2.0.0",
-    "node-sass": "^4.13.1",
-    "pug-cli": "^1.0.0-alpha6",
-    "watch": "^1.0.2"
+    "dotenv": "^14.3.0",
+    "http-server": "^14.1.0",
+    "pug": "^3.0.2",
+    "sass": "^1.49.0"
   }
 }
