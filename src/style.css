@@ -1,0 +1,27 @@
+html,
+body {
+	margin: 0;
+	background: #b0cf42;
+}
+
+.root {
+	margin-top: 150px;
+}
+
+.screen {
+	display: block;
+	margin: 0 auto;
+	background: #b0cf42;
+	box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+}
+
+.status {
+	margin: auto;
+	color: #333333;
+	text-align: right;
+	font-family: "Micro 5", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 48px;
+}
