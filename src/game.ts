@@ -84,7 +84,7 @@ export function createGame(options: Options) {
 			}
 		}
 
-		if (state === "gameover" && input.justPressed("Enter")) {
+		if (state === "gameover" && input.justPressed(["Enter", "Tap"])) {
 			reset();
 			onStart?.();
 			onScoreChange?.(score);
@@ -136,13 +136,13 @@ export function createGame(options: Options) {
 }
 
 function getDirection(input: Input): Vec2 | undefined {
-	if (input.justPressed(["ArrowUp", "w"])) {
+	if (input.justPressed(["ArrowUp", "w", "SwipeUp"])) {
 		return vec2(0, -1);
-	} else if (input.justPressed(["ArrowDown", "s"])) {
+	} else if (input.justPressed(["ArrowDown", "s", "SwipeDown"])) {
 		return vec2(0, 1);
-	} else if (input.justPressed(["ArrowLeft", "a"])) {
+	} else if (input.justPressed(["ArrowLeft", "a", "SwipeLeft"])) {
 		return vec2(-1, 0);
-	} else if (input.justPressed(["ArrowRight", "d"])) {
+	} else if (input.justPressed(["ArrowRight", "d", "SwipeRight"])) {
 		return vec2(1, 0);
 	}
 }

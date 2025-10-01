@@ -1,4 +1,5 @@
 import { createGame } from "./game";
+import { isTouchDevice } from "./device";
 
 const WIDTH = 20;
 const HEIGHT = 20;
@@ -7,8 +8,8 @@ function main() {
 	const root = document.querySelector<HTMLDivElement>(".js-root")!;
 
 	root.innerHTML = `
-		<div class="js-status status" style="width: 500px;"></div>
-		<div class="screen" style="width: 500px; height: 500px;">
+		<div class="js-status status"></div>
+		<div class="screen">
 			<canvas class="js-canvas canvas" width="1000" height="1000"></canvas>
 			<div class="js-end end hidden">
 				<div class="card">
@@ -17,7 +18,7 @@ function main() {
 						<div class="js-score score">0</div>
 						<div class="js-highscore">Best: 0</div>
 					</div>
-					<div class="instruction">&lt;ENTER&gt;</div>
+					<div class="instruction">&lt;${isTouchDevice() ? "Tap" : "ENTER"}&gt;</div>
 				</div>
 			</div>
 		</div>
