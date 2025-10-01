@@ -56,7 +56,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 12px;
+	gap: 32px;
 	transform: translateY(0);
 	transition: transform 0.1s cubic-bezier(1, 2.49, 0.8, 1);
 
@@ -69,8 +69,17 @@ body {
 	font-size: 48px;
 }
 
+.final-score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 32px;
+}
+
 .score {
 	font-size: 120px;
+	line-height: 0.8;
 }
 
 .instruction {

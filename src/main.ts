@@ -13,7 +13,10 @@ function main() {
 			<div class="js-end end hidden">
 				<div class="card">
 					<div class="title">Oops</div>
-					<div class="js-score score">0</div>
+					<div class="final-score">
+						<div class="js-score score">0</div>
+						<div class="js-highscore">Best: 0</div>
+					</div>
 					<div class="instruction">&lt;ENTER&gt;</div>
 				</div>
 			</div>
@@ -24,6 +27,8 @@ function main() {
 	const status = document.querySelector<HTMLDivElement>(".js-status")!;
 	const gameOverScreen = document.querySelector<HTMLDivElement>(".js-end")!;
 	const gameOverScore = document.querySelector<HTMLDivElement>(".js-score")!;
+	const gameOverHighscore =
+		document.querySelector<HTMLDivElement>(".js-highscore")!;
 
 	createGame({
 		canvas,
@@ -38,8 +43,29 @@ function main() {
 		onGameOver(finalScore) {
 			gameOverScreen.classList.remove("hidden");
 			gameOverScore.textContent = finalScore.toString();
+
+			const highscore = getHighscore();
+			if (finalScore >= highscore) {
+				localStorage.setItem("highscore", JSON.stringify(finalScore));
+				gameOverHighscore.textContent = "New best score";
+			} else {
+				gameOverHighscore.textContent = `Best: ${highscore}`;
+			}
 		},
 	});
+}
+
+function getHighscore() {
+	const highscore = localStorage.getItem("highscore");
+	try {
+		const parsed = highscore ? JSON.parse(highscore) : 0;
+		if (typeof parsed !== "number") {
+			return 0;
+		}
+		return parsed;
+	} catch {
+		return 0;
+	}
 }
 
 main();
