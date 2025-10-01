@@ -75,13 +75,13 @@ export function createGame(options: Options) {
 		render.pixel(...food);
 
 		if (input.justPressed("Escape")) {
-            if (state === "paused") {
-                state = "game";
-                onResume?.();
-            } else {
-                state = "paused";
-                onPause?.();
-            }
+			if (state === "paused") {
+				state = "game";
+				onResume?.();
+			} else {
+				state = "paused";
+				onPause?.();
+			}
 		}
 
 		if (state === "gameover" && input.justPressed("Enter")) {
