@@ -11,7 +11,7 @@ type Options = {
 	width: number;
 	height: number;
 	onStart?: () => void;
-	onGameOver?: () => void;
+	onGameOver?: (finalScore: number) => void;
 	onPause?: () => void;
 	onResume?: () => void;
 	onScoreChange?: (score: number) => void;
@@ -75,13 +75,13 @@ export function createGame(options: Options) {
 		render.pixel(...food);
 
 		if (input.justPressed("Escape")) {
-            if (state === "paused") {
-                state = "game";
-                onResume?.();
-            } else {
-                state = "paused";
-                onPause?.();
-            }
+			if (state === "paused") {
+				state = "game";
+				onResume?.();
+			} else {
+				state = "paused";
+				onPause?.();
+			}
 		}
 
 		if (state === "gameover" && input.justPressed("Enter")) {
@@ -100,7 +100,7 @@ export function createGame(options: Options) {
 
 			if (snake.body.some((segment) => equals(segment, moveHeadTo))) {
 				state = "gameover";
-				onGameOver?.();
+				onGameOver?.(score);
 				return;
 			}
 

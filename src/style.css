@@ -2,6 +2,14 @@ html,
 body {
 	margin: 0;
 	background: #b0cf42;
+	font-family: "Micro 5", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #333333;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 .root {
@@ -9,6 +17,7 @@ body {
 }
 
 .screen {
+	position: relative;
 	display: block;
 	margin: 0 auto;
 	background: #b0cf42;
@@ -16,12 +25,63 @@ body {
 	border-radius: 3px;
 }
 
+.canvas {
+	width: 100%;
+	height: 100%;
+}
+
 .status {
 	margin: auto;
-	color: #333333;
 	text-align: right;
-	font-family: "Micro 5", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 	font-size: 48px;
+}
+
+.end {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(176, 207, 66, 0.5);
+
+	&.hidden {
+		visibility: hidden;
+	}
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 32px;
+	transform: translateY(0);
+	transition: transform 0.1s cubic-bezier(1, 2.49, 0.8, 1);
+
+	.hidden & {
+		transform: translateY(15px);
+	}
+}
+
+.title {
+	font-size: 48px;
+}
+
+.final-score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 32px;
+}
+
+.score {
+	font-size: 120px;
+	line-height: 0.8;
+}
+
+.instruction {
+	font-size: 24px;
 }

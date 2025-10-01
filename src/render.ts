@@ -2,7 +2,7 @@ import type { System } from "./app";
 
 interface Render {
 	pixel(x: number, y: number): void;
-};
+}
 
 type Options = {
 	pixelSize: number;
