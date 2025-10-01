@@ -11,7 +11,7 @@ type Options = {
 	width: number;
 	height: number;
 	onStart?: () => void;
-	onGameOver?: () => void;
+	onGameOver?: (finalScore: number) => void;
 	onPause?: () => void;
 	onResume?: () => void;
 	onScoreChange?: (score: number) => void;
@@ -100,7 +100,7 @@ export function createGame(options: Options) {
 
 			if (snake.body.some((segment) => equals(segment, moveHeadTo))) {
 				state = "gameover";
-				onGameOver?.();
+				onGameOver?.(score);
 				return;
 			}
 
