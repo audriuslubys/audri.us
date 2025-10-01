@@ -17,8 +17,7 @@ body {
 
 .root {
 	max-width: 500px;
-	margin: 0 auto;
-	margin-top: min(calc((100vh - 500px) / 2), 150px);
+	margin: 40px auto 0;
 }
 
 .status {
