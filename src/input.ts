@@ -1,4 +1,5 @@
 import type { System } from "./app";
+import { vec2 } from "./vec2";
 
 export interface Input {
 	justPressed(key: string): boolean;
@@ -19,6 +20,57 @@ export function createInputSystem(): [Input, System] {
 
 	window.addEventListener("keyup", (event) => {
 		pressedKeys.delete(event.key);
+	});
+
+	let touchStart = vec2(0, 0);
+	let touchCurrent = vec2(0, 0);
+	let isTouching = false;
+	const minSwipeDistance = 15;
+
+	window.addEventListener("touchstart", (event) => {
+		touchStart = vec2(event.touches[0].clientX, event.touches[0].clientY);
+		touchCurrent = vec2(event.touches[0].clientX, event.touches[0].clientY);
+		isTouching = true;
+	});
+
+	window.addEventListener("touchmove", (event) => {
+		if (isTouching) {
+			touchCurrent = vec2(event.touches[0].clientX, event.touches[0].clientY);
+		}
+	});
+
+	window.addEventListener("touchend", (event) => {
+		if (isTouching) {
+			const touchEnd = vec2(
+				event.changedTouches[0].clientX,
+				event.changedTouches[0].clientY
+			);
+
+			const deltaX = touchEnd[0] - touchStart[0];
+			const deltaY = touchEnd[1] - touchStart[1];
+			const totalDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+			if (totalDistance >= minSwipeDistance) {
+				const absDeltaX = Math.abs(deltaX);
+				const absDeltaY = Math.abs(deltaY);
+
+				if (absDeltaX > absDeltaY) {
+					if (deltaX > 0) {
+						justPressedRegistry.add("SwipeRight");
+					} else {
+						justPressedRegistry.add("SwipeLeft");
+					}
+				} else {
+					if (deltaY > 0) {
+						justPressedRegistry.add("SwipeDown");
+					} else {
+						justPressedRegistry.add("SwipeUp");
+					}
+				}
+			}
+
+			isTouching = false;
+		}
 	});
 
 	function inputSystem() {
