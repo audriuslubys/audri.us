@@ -1,4 +1,5 @@
 import { createGame } from "./game";
+import { isTouchDevice } from "./device";
 
 const WIDTH = 20;
 const HEIGHT = 20;
@@ -17,7 +18,7 @@ function main() {
 						<div class="js-score score">0</div>
 						<div class="js-highscore">Best: 0</div>
 					</div>
-					<div class="instruction">&lt;ENTER&gt;</div>
+					<div class="instruction">&lt;${isTouchDevice() ? "Tap" : "ENTER"}&gt;</div>
 				</div>
 			</div>
 		</div>

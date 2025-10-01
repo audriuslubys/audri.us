@@ -23,20 +23,13 @@ export function createInputSystem(): [Input, System] {
 	});
 
 	let touchStart = vec2(0, 0);
-	let touchCurrent = vec2(0, 0);
 	let isTouching = false;
 	const minSwipeDistance = 15;
+	const maxTapDistance = 10;
 
 	window.addEventListener("touchstart", (event) => {
 		touchStart = vec2(event.touches[0].clientX, event.touches[0].clientY);
-		touchCurrent = vec2(event.touches[0].clientX, event.touches[0].clientY);
 		isTouching = true;
-	});
-
-	window.addEventListener("touchmove", (event) => {
-		if (isTouching) {
-			touchCurrent = vec2(event.touches[0].clientX, event.touches[0].clientY);
-		}
 	});
 
 	window.addEventListener("touchend", (event) => {
@@ -67,6 +60,8 @@ export function createInputSystem(): [Input, System] {
 						justPressedRegistry.add("SwipeUp");
 					}
 				}
+			} else if (totalDistance <= maxTapDistance) {
+				justPressedRegistry.add("Tap");
 			}
 
 			isTouching = false;

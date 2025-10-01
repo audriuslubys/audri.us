@@ -84,7 +84,7 @@ export function createGame(options: Options) {
 			}
 		}
 
-		if (state === "gameover" && input.justPressed("Enter")) {
+		if (state === "gameover" && input.justPressed(["Enter", "Tap"])) {
 			reset();
 			onStart?.();
 			onScoreChange?.(score);
