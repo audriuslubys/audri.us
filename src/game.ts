@@ -104,19 +104,22 @@ export function createGame(options: Options) {
 				return;
 			}
 
-			if (equals(moveHeadTo, food)) {
-				food = getRandomFoodPosition();
-				snake.body.push(snake.head);
-				score++;
-				onScoreChange?.(score);
+			const ateFood = equals(moveHeadTo, food);
+			if (ateFood) {
+				snake.body.push(vec2(0, 0));
 			}
 
 			snake.body = snake.body.map((_, index) => {
 				const moveTo = index === 0 ? snake.head : snake.body[index - 1];
 				return vec2(...moveTo);
 			});
-
 			snake.head = vec2(...moveHeadTo);
+
+			if (ateFood) {
+				food = getRandomFoodPosition();
+				onScoreChange?.(++score);
+			}
+
 			currentDirection = pendingDirection;
 		}
 
