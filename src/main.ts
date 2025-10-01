@@ -7,8 +7,8 @@ function main() {
 	const root = document.querySelector<HTMLDivElement>(".js-root")!;
 
 	root.innerHTML = `
-		<div class="js-status status" style="width: 500px;"></div>
-		<div class="screen" style="width: 500px; height: 500px;">
+		<div class="js-status status"></div>
+		<div class="screen">
 			<canvas class="js-canvas canvas" width="1000" height="1000"></canvas>
 			<div class="js-end end hidden">
 				<div class="card">
