@@ -123,10 +123,9 @@ export function createGame(options: Options) {
 			currentDirection = pendingDirection;
 		}
 
-		pendingDirection = getDirection(input) ?? pendingDirection;
-		// can't switch to an opposite direction
-		if (equals(add(pendingDirection, currentDirection), vec2(0, 0))) {
-			pendingDirection = currentDirection;
+		const directionInput = getDirection(input) ?? pendingDirection;
+		if (!equals(add(directionInput, currentDirection), vec2(0, 0))) {
+			pendingDirection = directionInput;
 		}
 	}
 
